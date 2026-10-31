@@ -69,18 +69,21 @@ Task *create_task(int id, int offset, int wcet, int deadline, int period) {
 }
 
 Job *release_job(Task *task, int arrival_time) {
-    Job *new_job_p = malloc(sizeof(Job));
-    if (new_job_p == NULL) {
-        fprintf(stderr, "Error allocating memory for new job");
-        return NULL;
-    }
-    new_job_p->duration = task->wcet;
-    new_job_p->release_time = arrival_time;
-    new_job_p->abs_deadline = arrival_time + task->deadline;
-    new_job_p->exec_time = 0;
-    new_job_p->period = task->period;
+    if (arrival_time % task->period == 0) {
+        Job *new_job_p = malloc(sizeof(Job));
+        if (new_job_p == NULL) {
+            fprintf(stderr, "Error allocating memory for new job");
+            return NULL;
+        }
+        new_job_p->duration = task->wcet;
+        new_job_p->release_time = arrival_time;
+        new_job_p->abs_deadline = arrival_time + task->deadline;
+        new_job_p->exec_time = 0;
+        new_job_p->period = task->period;
 
-    return new_job_p;
+        return new_job_p;
+    }
+    return NULL;
 }
 
 void print_task(Task *task) {
