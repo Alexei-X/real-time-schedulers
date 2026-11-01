@@ -12,10 +12,10 @@ bool schedule(Job *job, int time) {
 
 void print_job(Job *job) {
     printf("Job : \n");
-    printf("\t duration : %d\n", job->duration);
-    printf("\t release time : %d\n", job->release_time);
-    printf("\t absolute deadline : %d\n", job->abs_deadline);
-    printf("\t execution time : %d\n", job->exec_time);
-    printf("\t period : %d\n", job->period);
+    printf(" duration : %d | ", job->duration);
+    printf(" release time : %d | ", job->release_time);
+    printf(" absolute deadline : %d | ", job->abs_deadline);
+    printf(" execution time : %d | ", job->exec_time);
+    printf(" period : %d\n", job->period);
 }
 

@@ -88,8 +88,8 @@ Job *release_job(Task *task, int arrival_time) {
 
 void print_task(Task *task) {
     printf("Task n°%d\n", task->id);
-    printf("Offset : %d\n", task->offset);
-    printf("WCET : %d\n", task->wcet);
-    printf("Deadline : %d\n", task->deadline);
-    printf("Period : %d\n", task->period);
+    printf("  Offset : %d | ", task->offset);
+    printf("  WCET : %d | ", task->wcet);
+    printf("  Deadline : %d | ", task->deadline);
+    printf("  Period : %d\n", task->period);
 }

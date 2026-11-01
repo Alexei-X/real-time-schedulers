@@ -26,5 +26,7 @@ int main(int argc, char** argv) {
         print_task(taskset->tasks[i]);
     }
 
+    schedule_tasks(scheduling, taskset);
+
     return 0;
 }
