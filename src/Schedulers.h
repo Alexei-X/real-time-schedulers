@@ -12,6 +12,18 @@ enum Scheduling {
     EDF
 };
 
+enum Heuristic {
+    FF,
+    BF,
+    NF,
+    WF
+};
+
+enum Sorting {
+    DU,
+    IU
+};
+
 Job *rate_monotonic(Job **jobs, int n_jobs, int *job_index);
 Job *deadline_monotonic(Job **jobs, int n_jobs);
 Job *earliest_deadline_first(Job **jobs, int n_jobs);
